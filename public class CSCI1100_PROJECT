@@ -1,0 +1,109 @@
+import java.util.Scanner;
+
+public class CSCI1100_PROJECT {
+	public static void main (String [] args) {
+		System.out.println("CSCI1100_PROJECT successfully booted... ");
+		runMainMenu();
+	}
+	
+	public static void runMainMenu(){
+		
+		String user_input;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("\nHow would you like to proceed?"
+				+ "\n1 - Training"
+				+ "\n2 - Survival"
+				+ "\n3 - Leaderboard"
+				+ "\n4 - Quit");
+		user_input = input.nextLine();
+		user_input = user_input.toLowerCase();
+		
+		switch(user_input) {
+		
+			case "training" : 
+				runTraining();
+				break;
+			case "1" :
+				runTraining();
+				break;
+				
+			case "survival" :
+				runSurvival();
+				break;
+			case "2" : 
+				runSurvival();
+				break;
+				
+			case "leaderboard" :
+				runLeaderboard();
+				break;
+			case "3" :
+				runLeaderboard();
+				break;
+				
+			case "quit" :
+				runQuit();
+				break;
+			case "4" :
+				runQuit();
+				break;
+		
+		}
+	}
+	
+	public static void runTraining() {
+		System.out.println("Training successfully opened.");
+		//Code
+	}
+	
+	public static void runSurvival() {
+		
+		String user_input;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("\nSurvival successfully opened.");
+		System.out.println("Are you sure you would like to continue?"
+				+ "\n1 - Yes"
+				+ "\n2 - No");
+		user_input = input.nextLine();
+		user_input = user_input.toLowerCase();
+		
+		switch(user_input) {
+			
+			case "yes" :
+				System.out.println("Survival being loaded..."); //Test string indicating that the survival confirmation went through.
+				System.out.println("Returning to main menu..."); //In the future this should run the survival game, for now it returns to main menu.
+				runMainMenu();
+				break;
+			case "1" :
+				System.out.println("Survival being loaded..."); //Test string indicating that the survival confirmation went through.
+				System.out.println("Returning to main menu..."); //In the future this should run the survival game, for now it returns to main menu.
+				runMainMenu();
+				break;
+				
+			case "no" : 
+				System.out.println("You have declined to play survival.");
+				System.out.println("Returning to main menu...");
+				runMainMenu();
+				break;
+			case "2" : 
+				System.out.println("You have declined to play survival.");
+				System.out.println("Returning to main menu...");
+				runMainMenu();
+				break;
+				
+		}
+	}
+	
+	public static void runLeaderboard() {
+		System.out.println("Leaderboard successfully opened.");
+		//Code
+	}
+	
+	public static void runQuit() {
+		System.out.println("Exiting program...");
+		System.exit(0);
+		System.out.print("If this prints the program did not exit."); //This did not print, therefore the exit statement worked.
+	}
+}
