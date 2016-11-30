@@ -1,0 +1,167 @@
+
+import java.util.Random;//import random class
+import java.util.Scanner;//import scanner
+
+public class Addition{
+   public static void main (String[]args){
+      Scanner kb = new Scanner(System.in);
+      String selection;
+      
+      System.out.println("Please select a stage:");
+      System.out.println("1-    Stage one");
+      System.out.println("2-    Stage two");
+      System.out.println("3-    Stage three");
+      selection = kb.nextLine();
+      selection = selection.toLowercase();
+      
+      if(selection.equals("stage one") || selection.equals("1"))
+         stageOneAdd();
+      
+      else if(selection.equals("stage two") || selection.equals("2")){
+         String code;
+         System.out.print("Please enter the secret code to enter stage 2: ");
+         code = kb.nextLine();
+         code = code.toLowercase();
+         
+         if(code.equals("rex"))
+            stageTwoAdd();
+         
+         else{
+            System.out.println("That is not the correct code.");
+            System.out.pri
+     
+      else if(selection.equals("stage three") || selection.equals("3"))
+         stageThreeAdd();
+     
+      else
+         System.out.println("Sorry that is not a valid option");
+            
+       
+      }
+                     
+      public static void stageOneAdd(){
+         import java.util.Scanner;//import scanner
+         Scanner kb = new Scanner(System.in);
+         String selection;
+         System.out.println("You have entered Stage One of Addition.");
+         System.out.println("You must solve 3 equations correctly to complete this stage.");
+         System.out.println("Would you like to begin Stage One?");
+         System.out.println("Yes (continue) or No (main menu): ");
+         selection = kb.nextLine();
+         selection = selection.toLowercase();
+         if(selection.equals("yes")
+            boolean x = true;
+            int score = 0;
+            while (x == true){
+               for (int i = 0 ; i <= 5 ; i++){
+                  score += q1A();
+               }
+               System.out.print("You scored "+score+"/5.")
+               if (score >= 3){
+                  System.out.print("The secret code to advance to stage 2 is : rex");
+                  if (continueCheck(String "Would you like to begin stage two") == 1)
+                     x == false;
+                  else if (
+                     System.out.print("You chose to continue, 
+               }  
+            }
+                   
+                                
+            
+         else(selection.equals("no")
+            mainMenu();
+        
+            
+         public static int q1A(int score){
+            import java.util.Scanner;//import scanner
+            Scanner kb = new Scanner(System.in);
+            import java.util.Random;//import random class
+            int num1,num2, userAns, ans;
+            String selection;
+            Random random = new Random();
+            for(int i=0; i<5; i = i++){
+               x = random.nextInt(11);
+               y = random.nextInt(6);
+               System.out.println("You must solve atleast 3 equations out of 5 correctly to complete this stage.");
+               System.out.print("Solve the equation: " + num1 + "+" + num2 + "=");
+               userAns = kb.nextInt();
+               ans = num1+num2;
+               if(ans == userAns){
+                  System.out.println("Congradulations! You have solved the equation!");
+                  i++;
+               }
+               else{
+                  System.out.print("You suck");
+               }
+            }  
+         System.out.println("Congradulations! You have completed stage one of addition!");
+         System.out.println("The secret code for stage two of addition is \"rex\"");
+         System.out.println("\nHow would you like to proceed?");
+         System.out.println("1-   Main Menu");
+         System.out.println("2-   Stage Two Addition");
+         System.out.println("3-   Quit Program");
+         selection = kb.nextLine();
+         selection = selction.toLowercase();
+         if(selection.equals("main menu") || selection.equals("1"))
+            mainMenu();
+         else if(selection.equals("stage two addition") || selection.equals("2"))
+            stageTwoAdd();
+         else if(selection.equals("quit program") || selection.equals("3"))
+            quit();
+         else
+                   
+         }
+      }
+      
+      public static void stageTwoAdd(){
+         //String code, selection;
+         //System.out.print("Please enter the secret code to access stage two of addition: ");
+         //code = kb.nextLine();
+         if(code.toLowercase().equals("rex")){ 
+            int x,y, userAns, ans;
+            Random random = new Random();
+            for(int i=0; i<3; i = i){
+            x = random.nextInt(20)+5;
+            y = random.nextInt(10)+5;
+            System.out.println("You must solve 3 equations correctly to complete this stage.");
+            System.out.print("Solve the equation: " + x + "+" + y + "=");
+            userAns = kb.nextInt();
+            ans = x+y
+               if(ans == userAns){
+                  System.out.println("Congradulations! You have solved the equation!");
+                  i++;
+               }
+               else{
+                  System.out.print("You suck");
+               }
+            }  
+            System.out.println("Congradulations! You have completed stage one of addition!");
+            System.out.println("The secret code for stage two of addition is \"applesauce\"");
+            System.out.println("\nHow would you like to proceed?");
+            System.out.println("1-   Main Menu");
+            System.out.println("2-   Stage Two Addition");
+            System.out.println("3-   Quit Program");
+            selection = kb.nextLine();
+         }
+         else{
+            System.out.println("Sorry that was not the secret code for stage two of addition");
+            System.out.println("How would you like to proceed?");
+            System.out.println("1-   Try secret code again");
+            System.out.println("2-   Main Menu");
+            System.out.println("3-   Quit Program");
+            selection = kb.nextLine();
+            selection = selection.toLowercase();
+            if(selection.equals("try secret code again") || selection.equals("1"))
+               stageTwoAdd();
+            else if(selection.equals("main menu") || selection.equals("2"))
+               mainMenu();
+            else if(selection.equals("quit program") || selection.equals("3"))
+               quitProgram();
+            else
+               System.out.print("Sorry that was not a valid option. Please try again");
+                       
+                  
+                          
+                       
+                  
+
