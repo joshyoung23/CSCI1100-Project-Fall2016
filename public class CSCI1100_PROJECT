@@ -67,8 +67,86 @@ public class CSCI1100_PROJECT {
 	}
 	
 	public static void runTraining() {
-		System.out.println("Training successfully opened.");
-		//Code
+		
+		int number_of_menu_options = 10;
+		String [] menu_options = new String[number_of_menu_options]; 
+		String user_input;
+		
+		//Program option 1 - addition
+		menu_options[0] = "addition";
+		menu_options[1] = "1";
+				
+		//Program option 2 - subtraction
+		menu_options[2] = "subtraction";
+		menu_options[3] = "2";
+				
+		//Program option 3 - multiplication
+		menu_options[4] = "multiplication";
+		menu_options[5] = "3";
+				
+		//Program option 4 - division
+		menu_options[6] = "division";
+		menu_options[7] = "4";
+		
+		//Program option 5 - main menu
+		menu_options[8] = "main menu";
+		menu_options[9] = "5";
+		
+		System.out.println("\nTraining successfully opened. Which level would you like to play?"
+				+ "\n1 - Addition"
+				+ "\n2 - Subtraction"
+				+ "\n3 - Multiplication"
+				+ "\n4 - Division"
+				+ "\n5 - Main Menu");
+		user_input = runInputLoop(number_of_menu_options, menu_options);
+		
+		switch (user_input){
+			
+			case "addition" :
+				//runAddition
+				System.out.println("Returning to main menu... (addition)");
+				runMainMenu();
+			case "1" :
+				//runAddition
+				System.out.println("Returning to main menu... (addition)");
+				runMainMenu();
+				
+			case "subtraction" :
+				//runSubtraction
+				System.out.println("Returning to main menu... (subtraction)");
+				runMainMenu();
+			case "2" :
+				//runSubtraction
+				System.out.println("Returning to main menu... (subtraction)");
+				runMainMenu();
+				
+			case "multiplication" :
+				//runMultiplication
+				System.out.println("Reuturning to main menu...(multiplication)");
+				runMainMenu();
+			case "3" :
+				//runMuiltiplication
+				System.out.println("Reuturning to main menu...(multiplication)");
+				runMainMenu();
+			
+			case "division" :
+				//runDivision
+				System.out.println("Returning to main menu...(division)");
+				runMainMenu();
+			case "4" :
+				//runDivision
+				System.out.println("Returning to main menu...(division)");
+				runMainMenu();
+			
+			case "main menu" :
+				//Returns to the main menu
+				System.out.println("Returning to main menu...");
+				runMainMenu();
+			case "5" :
+				//Returns to the main menu
+				 System.out.println("Returning to main menu...");
+				 runMainMenu();
+		}
 	}
 	
 	public static void runSurvival() {
@@ -122,20 +200,20 @@ public class CSCI1100_PROJECT {
 	
 	public static void runLeaderboard() {
 		System.out.println("Leaderboard successfully opened.");
-		//Code
+		//Output the leaderboard!
+		System.out.println("Returning to main menu...");
+		runMainMenu();
 	}
 	
 	public static void runQuit() {
 		System.out.println("Exiting program...");
 		System.exit(0);
-		System.out.print("If this prints the program did not exit."); //This did not print, therefore the exit statement worked.
 	}
 
 	//This method is to be used for every MENU input. It will check to ensure that user_input is a valid input. 
 	public static String runInputLoop(int number_of_menu_options, String[] menu_options) {
 		Scanner input = new Scanner(System.in);
 		String user_input = "";
-
 		boolean match_found = false;
 		while (match_found != true){
 			//Prompts the user to input a command, and converts it to lower case.
