@@ -5,7 +5,6 @@ public class CSCI1100_PROJECT {
 		System.out.println("CSCI1100_PROJECT successfully booted... ");
 		runMainMenu();
 	}
-	//Hi Josh, i'm just checking to see if this works. -Stephen
 	public static void runMainMenu(){
 		
 		String user_input;
