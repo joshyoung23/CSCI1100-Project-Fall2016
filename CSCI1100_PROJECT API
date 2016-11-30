@@ -1,0 +1,9 @@
+This is the API for class CSCI1100_PROJECT. Inside is a description of all available methods in this class. 
+
+main() - 
+  This method is the main method, and for now just immediately sends the user to the main menu after a single line greeting message.
+  
+runMainMenu() -
+  Will output a list of options to the user on how to proceed, with more menus branching off from it. 
+  
+giving up for now
