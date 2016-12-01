@@ -17,7 +17,7 @@ public class CSCI1100_PROJECT {
 		
 		//Program option 2
 		menu_options[2] = "survival";
-		menu_options[3] = "2";
+    	menu_options[3] = "2";
 		
 		//Program option 3
 		menu_options[4] = "leaderboard";
@@ -158,7 +158,7 @@ public class CSCI1100_PROJECT {
 				+ "\n2 - Stage two"
 				+ "\n3 - Stage three"
 				+ "\n4 - Main menu");
-		runInputLoop(menu_options);
+		user_input = runInputLoop(menu_options);
 		
 		switch (user_input) {
 		
@@ -225,7 +225,7 @@ public class CSCI1100_PROJECT {
 				+ "\n2 - Stage two"
 				+ "\n3 - Stage three"
 				+ "\n4 - Main menu");
-		runInputLoop(menu_options);
+		user_input = runInputLoop(menu_options);
 		
 		switch (user_input) {
 		
@@ -292,7 +292,7 @@ public class CSCI1100_PROJECT {
 				+ "\n2 - Stage two"
 				+ "\n3 - Stage three"
 				+ "\n4 - Main menu");
-		runInputLoop(menu_options);
+		user_input = runInputLoop(menu_options);
 		
 		switch (user_input) {
 		
@@ -359,7 +359,7 @@ public class CSCI1100_PROJECT {
 				+ "\n2 - Stage two"
 				+ "\n3 - Stage three"
 				+ "\n4 - Main menu");
-		runInputLoop(menu_options);
+		user_input = runInputLoop(menu_options);
 		
 		switch (user_input) {
 		
