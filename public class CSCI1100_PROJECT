@@ -65,6 +65,7 @@ public class CSCI1100_PROJECT {
 		}
 	}
 	
+	
 	public static void runTrainingMenu() {
 		
 		String [] menu_options = new String[10]; 
@@ -101,47 +102,30 @@ public class CSCI1100_PROJECT {
 		switch (user_input){
 			
 			case "addition" :
-				//runAdditionMenu();
-				System.out.println("Returning to main menu... (addition)");
-				runMainMenu();
+				runAdditionMenu();
 			case "1" :
-				//runAdditionMenu
-				System.out.println("Returning to main menu... (addition)");
-				runMainMenu();
+				runAdditionMenu();
 				
 			case "subtraction" :
-				//runSubtraction
-				System.out.println("Returning to main menu... (subtraction)");
-				runMainMenu();
+				runSubtractionMenu();
 			case "2" :
-				//runSubtraction
-				System.out.println("Returning to main menu... (subtraction)");
-				runMainMenu();
-				
+				runSubtractionMenu();
+
 			case "multiplication" :
-				//runMultiplication
-				System.out.println("Reuturning to main menu...(multiplication)");
-				runMainMenu();
+				runMultiplicationMenu();
 			case "3" :
-				//runMuiltiplication
-				System.out.println("Reuturning to main menu...(multiplication)");
-				runMainMenu();
-			
+				runMultiplicationMenu();
+
 			case "division" :
-				//runDivision
-				System.out.println("Returning to main menu...(division)");
-				runMainMenu();
+				runDivisionMenu();
+
 			case "4" :
-				//runDivision
-				System.out.println("Returning to main menu...(division)");
-				runMainMenu();
-			
+				runDivisionMenu();
+
 			case "main menu" :
-				//Returns to the main menu
 				System.out.println("Returning to main menu...");
 				runMainMenu();
 			case "5" :
-				//Returns to the main menu
 				 System.out.println("Returning to main menu...");
 				 runMainMenu();
 		}
@@ -152,7 +136,24 @@ public class CSCI1100_PROJECT {
 		String [] menu_options = new String[8];
 		String user_input = "";
 		
-		System.out.println("Welcome to the addition training menu. How would you like to proceed?"
+		//Program option 1 - stage one
+		menu_options[0] = "stage one";
+		menu_options[1] = "1";
+						
+		//Program option 2 - stage two
+		menu_options[2] = "stage two";
+		menu_options[3] = "2";
+						
+		//Program option 3 - stage three
+		menu_options[4] = "stage three";
+		menu_options[5] = "3";
+				
+		//Program option 4 - main menu
+		menu_options[6] = "main menu";
+		menu_options[7] = "4";
+
+		
+		System.out.println("\nWelcome to the addition training menu. How would you like to proceed?"
 				+ "\n1 - Stage one"
 				+ "\n2 - Stage two"
 				+ "\n3 - Stage three"
@@ -177,12 +178,229 @@ public class CSCI1100_PROJECT {
 			case "2" :
 				//runAdditionStageTwo
 				System.out.println("Returning to main menu...(addition stage two)");
+				runMainMenu();
 				
 			case "stage three" :
+				//runAdditionStageThree
+				System.out.println("Returning to main menu...(addition stage three)");
+				runMainMenu();
+			case "3" :
+				//runAdditionStageThree
+				System.out.println("Returning to main menu...(addition stage three)");
+				runMainMenu();
 				
+			case "main menu" :
+				System.out.println("Returning to main menu...");
+				runMainMenu();
+			case "4" :
+				System.out.println("Returning to main menu...");
+				runMainMenu();
 		
 		}
 	}
+	
+	public static void runSubtractionMenu() {
+		
+		String [] menu_options = new String[8];
+		String user_input = "";
+		
+		//Program option 1 - stage one
+		menu_options[0] = "stage one";
+		menu_options[1] = "1";
+								
+		//Program option 2 - stage two
+		menu_options[2] = "stage two";
+		menu_options[3] = "2";
+								
+		//Program option 3 - stage three
+		menu_options[4] = "stage three";
+		menu_options[5] = "3";
+						
+		//Program option 4 - main menu
+		menu_options[6] = "main menu";
+		menu_options[7] = "4";
+		
+		System.out.println("\nWelcome to the subtraction training menu. How would you like to proceed?"
+				+ "\n1 - Stage one"
+				+ "\n2 - Stage two"
+				+ "\n3 - Stage three"
+				+ "\n4 - Main menu");
+		runInputLoop(menu_options);
+		
+		switch (user_input) {
+		
+			case "stage one" :
+				//runSubtractionStageOne
+				System.out.println("Returning to main menu...(subtraction stage one)");
+				runMainMenu();
+			case "1" :
+				//runSubtractionStageOne
+				System.out.println("Returning to main menu...(subtraction stage one)");
+				runMainMenu();
+				
+			case "stage two" :
+				//runSubtractionStageTwo
+				System.out.println("Returning to main menu...(subtraction stage two)");
+				runMainMenu();
+			case "2" :
+				//runSubtractionStageTwo
+				System.out.println("Returning to main menu...(subtraction stage two)");
+				runMainMenu();
+				
+			case "stage three" :
+				//runSubtractionStageThree
+				System.out.println("Returning to main menu...(subtraction stage three)");
+				runMainMenu();
+			case "3" :
+				//runSubtractionStageThree
+				System.out.println("Returning to main menu...(subtraction stage three)");
+				runMainMenu();
+				
+			case "main menu" :
+				System.out.println("Returning to main menu...");
+				runMainMenu();
+			case "4" :
+				System.out.println("Returning to main menu...");
+				runMainMenu();
+		}
+		
+	}
+	
+	public static void runMultiplicationMenu() {
+		
+		String [] menu_options = new String[8];
+		String user_input = "";
+		
+		//Program option 1 - stage one
+		menu_options[0] = "stage one";
+		menu_options[1] = "1";
+								
+		//Program option 2 - stage two
+		menu_options[2] = "stage two";
+		menu_options[3] = "2";
+								
+		//Program option 3 - stage three
+		menu_options[4] = "stage three";
+		menu_options[5] = "3";
+						
+		//Program option 4 - main menu
+		menu_options[6] = "main menu";
+		menu_options[7] = "4";
+		
+		System.out.println("\nWelcome to the multiplication training menu. How would you like to proceed?"
+				+ "\n1 - Stage one"
+				+ "\n2 - Stage two"
+				+ "\n3 - Stage three"
+				+ "\n4 - Main menu");
+		runInputLoop(menu_options);
+		
+		switch (user_input) {
+		
+			case "stage one" :
+				//runMultiplicationStageOne
+				System.out.println("Returning to main menu...(multiplication stage one)");
+				runMainMenu();
+			case "1" :
+				//runMultiplicationStageOne
+				System.out.println("Returning to main menu...(multiplication stage one)");
+				runMainMenu();
+				
+			case "stage two" :
+				//runMultiplicationStageTwo
+				System.out.println("Returning to main menu...(multiplication stage two)");
+				runMainMenu();
+			case "2" :
+				//runMultiplicationStageTwo
+				System.out.println("Returning to main menu...(multiplication stage two)");
+				runMainMenu();
+				
+			case "stage three" :
+				//runMultiplicationStageThree
+				System.out.println("Returning to main menu...(multiplication stage three)");
+				runMainMenu();
+			case "3" :
+				//runMultiplicationStageThree
+				System.out.println("Returning to main menu...(multiplication stage three)");
+				runMainMenu();
+				
+			case "main menu" :
+				System.out.println("Returning to main menu...");
+				runMainMenu();
+			case "4" :
+				System.out.println("Returning to main menu...");
+				runMainMenu();
+		
+		}
+	}
+	
+	public static void runDivisionMenu() {
+		
+		String [] menu_options = new String[8];
+		String user_input = "";
+		
+		//Program option 1 - stage one
+		menu_options[0] = "stage one";
+		menu_options[1] = "1";
+								
+		//Program option 2 - stage two
+		menu_options[2] = "stage two";
+		menu_options[3] = "2";
+								
+		//Program option 3 - stage three
+		menu_options[4] = "stage three";
+		menu_options[5] = "3";
+						
+		//Program option 4 - main menu
+		menu_options[6] = "main menu";
+		menu_options[7] = "4";
+		
+		System.out.println("\nWelcome to the division training menu. How would you like to proceed?"
+				+ "\n1 - Stage one"
+				+ "\n2 - Stage two"
+				+ "\n3 - Stage three"
+				+ "\n4 - Main menu");
+		runInputLoop(menu_options);
+		
+		switch (user_input) {
+		
+			case "stage one" :
+				//runDivisionStageOne
+				System.out.println("Returning to main menu...(division stage one)");
+				runMainMenu();
+			case "1" :
+				//runDivisionStageOne
+				System.out.println("Returning to main menu...(division stage one)");
+				runMainMenu();
+				
+			case "stage two" :
+				//runDivisionStageTwo
+				System.out.println("Returning to main menu...(division stage two)");
+				runMainMenu();
+			case "2" :
+				//runDivisionStageTwo
+				System.out.println("Returning to main menu...(division stage two)");
+				runMainMenu();
+				
+			case "stage three" :
+				//runDivisionStageThree
+				System.out.println("Returning to main menu...(division stage three)");
+				runMainMenu();
+			case "3" :
+				//runDivisionStageThree
+				System.out.println("Returning to main menu...(division stage three)");
+				runMainMenu();
+				
+			case "main menu" :
+				System.out.println("Returning to main menu...");
+				runMainMenu();
+			case "4" :
+				System.out.println("Returning to main menu...");
+				runMainMenu();
+		
+		}
+	}
+
+	
 	
 	public static void runSurvival() {
 		
