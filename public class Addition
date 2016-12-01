@@ -1,167 +1,318 @@
-
 import java.util.Random;//import random class
 import java.util.Scanner;//import scanner
+import java.lang.NumberFormatException;
 
-public class Addition{
-   public static void main (String[]args){
+public class Addition{                 
+   public static void stageOneAdd(){
       Scanner kb = new Scanner(System.in);
-      String selection;
       
-      System.out.println("Please select a stage:");
-      System.out.println("1-    Stage one");
-      System.out.println("2-    Stage two");
-      System.out.println("3-    Stage three");
-      selection = kb.nextLine();
-      selection = selection.toLowercase();
+      System.out.print("\nYou have entered Stage One of Addition."
+                      +"\nYou must solve 3 equations correctly to complete this stage."
+                      +"\nWould you like to begin Stage One?");
+                      
+      System.out.println("\nYes (continue) - 1"
+                        +"\nNo (main menu) - 2");
+                        
+      String[] menu_options = {"yes","1","no","2"};
       
-      if(selection.equals("stage one") || selection.equals("1"))
-         stageOneAdd();
+      String user_input = CSCI1100_PROJECT.runInputLoop(menu_options);
       
-      else if(selection.equals("stage two") || selection.equals("2")){
-         String code;
-         System.out.print("Please enter the secret code to enter stage 2: ");
-         code = kb.nextLine();
-         code = code.toLowercase();
-         
-         if(code.equals("rex"))
-            stageTwoAdd();
-         
-         else{
-            System.out.println("That is not the correct code.");
-            System.out.pri
-     
-      else if(selection.equals("stage three") || selection.equals("3"))
-         stageThreeAdd();
-     
-      else
-         System.out.println("Sorry that is not a valid option");
-            
-       
-      }
-                     
-      public static void stageOneAdd(){
-         import java.util.Scanner;//import scanner
-         Scanner kb = new Scanner(System.in);
-         String selection;
-         System.out.println("You have entered Stage One of Addition.");
-         System.out.println("You must solve 3 equations correctly to complete this stage.");
-         System.out.println("Would you like to begin Stage One?");
-         System.out.println("Yes (continue) or No (main menu): ");
-         selection = kb.nextLine();
-         selection = selection.toLowercase();
-         if(selection.equals("yes")
-            boolean x = true;
-            int score = 0;
-            while (x == true){
-               for (int i = 0 ; i <= 5 ; i++){
-                  score += q1A();
-               }
-               System.out.print("You scored "+score+"/5.")
-               if (score >= 3){
-                  System.out.print("The secret code to advance to stage 2 is : rex");
-                  if (continueCheck(String "Would you like to begin stage two") == 1)
-                     x == false;
-                  else if (
-                     System.out.print("You chose to continue, 
-               }  
+      int score = 0;
+      
+      boolean x = false;
+      
+      if(user_input.equals("yes")||user_input.equals("1")){
+         while (x != true){
+            for (int i = 0 ; i < 5 ; i++){
+               score = q1A(score);
             }
+            System.out.print("\nYour current score is: "+score);
+            if (score >= 3){
+               System.out.print("\nThe secret code to advance to stage 2 is : rex");
+               
+               user_input = continueCheck12("\nWhat would you like to do?");
+               
+               if (user_input.equals("0")||user_input.equals("replay"))
+                  System.out.print("\nYou chose to keep playing stage 1, starting again..."); 
                    
-                                
-            
-         else(selection.equals("no")
-            mainMenu();
-        
-            
-         public static int q1A(int score){
-            import java.util.Scanner;//import scanner
-            Scanner kb = new Scanner(System.in);
-            import java.util.Random;//import random class
-            int num1,num2, userAns, ans;
-            String selection;
-            Random random = new Random();
-            for(int i=0; i<5; i = i++){
-               x = random.nextInt(11);
-               y = random.nextInt(6);
-               System.out.println("You must solve atleast 3 equations out of 5 correctly to complete this stage.");
-               System.out.print("Solve the equation: " + num1 + "+" + num2 + "=");
-               userAns = kb.nextInt();
-               ans = num1+num2;
-               if(ans == userAns){
-                  System.out.println("Congradulations! You have solved the equation!");
-                  i++;
-               }
-               else{
-                  System.out.print("You suck");
-               }
+               else if (user_input.equals("1")||user_input.equals("continue")){
+                  System.out.print("\nYou chose to move on to stage 2, here we go...");
+                  stageTwoAdd("rex");
+               }   
+               else {
+                  System.out.print("\nReturning to main menu...");       
+                  CSCI1100_PROJECT.runMainMenu();
+               }                 
             }  
-         System.out.println("Congradulations! You have completed stage one of addition!");
-         System.out.println("The secret code for stage two of addition is \"rex\"");
-         System.out.println("\nHow would you like to proceed?");
-         System.out.println("1-   Main Menu");
-         System.out.println("2-   Stage Two Addition");
-         System.out.println("3-   Quit Program");
-         selection = kb.nextLine();
-         selection = selction.toLowercase();
-         if(selection.equals("main menu") || selection.equals("1"))
-            mainMenu();
-         else if(selection.equals("stage two addition") || selection.equals("2"))
-            stageTwoAdd();
-         else if(selection.equals("quit program") || selection.equals("3"))
-            quit();
-         else
-                   
          }
-      }
+      }   
+                
+      else
+         CSCI1100_PROJECT.runMainMenu();
+         
+   }//END stageOneAdd();
+            
+   //QUESTION GENERATOR FOR STAGE ONE      
+   public static int q1A(int score){
+      Scanner kb = new Scanner(System.in);
+      int n1,n2, userAns = 0, ans;
+      String selection = "", user_input = "";
+      boolean x = false;
+      Random r = new Random();
+      n1 = r.nextInt(10)+1;
+      n2 = r.nextInt(5)+1;
+      System.out.print("\nSolve the equation: " + n1 + " + " + n2 + " = ");
+      user_input = kb.nextLine();
+      while(x != true){
+         try {
+            userAns = Integer.parseInt(user_input);
+            x = true;
+         } catch (NumberFormatException e) {
+            System.out.print("\nWhat you entered was not a number, please try again: ");
+            user_input = kb.nextLine();
+            x = false;
+         }   
+      }         
+      ans = n1 + n2;
       
-      public static void stageTwoAdd(){
-         //String code, selection;
-         //System.out.print("Please enter the secret code to access stage two of addition: ");
-         //code = kb.nextLine();
-         if(code.toLowercase().equals("rex")){ 
-            int x,y, userAns, ans;
-            Random random = new Random();
-            for(int i=0; i<3; i = i){
-            x = random.nextInt(20)+5;
-            y = random.nextInt(10)+5;
-            System.out.println("You must solve 3 equations correctly to complete this stage.");
-            System.out.print("Solve the equation: " + x + "+" + y + "=");
-            userAns = kb.nextInt();
-            ans = x+y
-               if(ans == userAns){
-                  System.out.println("Congradulations! You have solved the equation!");
-                  i++;
-               }
-               else{
-                  System.out.print("You suck");
-               }
-            }  
-            System.out.println("Congradulations! You have completed stage one of addition!");
-            System.out.println("The secret code for stage two of addition is \"applesauce\"");
-            System.out.println("\nHow would you like to proceed?");
-            System.out.println("1-   Main Menu");
-            System.out.println("2-   Stage Two Addition");
-            System.out.println("3-   Quit Program");
-            selection = kb.nextLine();
-         }
-         else{
-            System.out.println("Sorry that was not the secret code for stage two of addition");
-            System.out.println("How would you like to proceed?");
-            System.out.println("1-   Try secret code again");
-            System.out.println("2-   Main Menu");
-            System.out.println("3-   Quit Program");
-            selection = kb.nextLine();
-            selection = selection.toLowercase();
-            if(selection.equals("try secret code again") || selection.equals("1"))
-               stageTwoAdd();
-            else if(selection.equals("main menu") || selection.equals("2"))
-               mainMenu();
-            else if(selection.equals("quit program") || selection.equals("3"))
-               quitProgram();
-            else
-               System.out.print("Sorry that was not a valid option. Please try again");
-                       
-                  
-                          
-                       
-                  
+      if(ans == userAns){
+         System.out.println("\nCongratulations! You have solved the equation!");
+         score++;
+      }
+      else{
+         System.out.println("\nWhat you have entered is incorrect.");
+      }
+      return score;
+      
+   }//END q1A    
 
+//
+//STAGE TWO
+//   
+
+   public static void stageTwoAdd(String user_input){
+      Scanner kb = new Scanner(System.in);
+      
+      System.out.print("\nYou have entered Stage Two of Addition.");
+      
+      while (!user_input.equals("rex")){
+         System.out.println("\nIn order to remain on this stage, please enter the correct password "
+                         +"\nor type quit to return to the Main Menu.");
+         user_input = kb.nextLine();
+         user_input = user_input.toLowerCase();
+         
+         if (user_input.equals("rex"))
+            System.out.print("\nThat password was correct!");
+         else if (user_input.equals("quit")||user_input.equals("main menu"))
+            CSCI1100_PROJECT.runMainMenu();
+         else
+            System.out.print("\nSorry, what you entered was not the password...");
+      }                 
+      System.out.println("\nYou must solve 5 equations correctly to complete this stage."
+                        +"\nWould you like to begin Stage Two?"
+                        +"\nYes (continue) - 1"
+                        +"\nNo (main menu) - 2");
+                        
+      String[] menu_options = {"yes","1","no","2"};
+      
+      user_input = CSCI1100_PROJECT.runInputLoop(menu_options);
+      
+      int score = 0;
+      
+      boolean x = false;
+      
+      if(user_input.equals("yes")||user_input.equals("1")){
+         while (x != true){
+            for (int i = 0 ; i < 5 ; i++){
+               score = q2A(score);
+            }
+            System.out.print("\nYour current score is: "+score);
+            if (score >= 3){
+               System.out.print("\nThe secret code to advance to stage 3 is : fossil");
+               
+               user_input = continueCheck12("\nWhat would you like to do?");
+               
+               if (user_input.equals("0")||user_input.equals("replay"))
+                  System.out.print("\nYou chose to keep playing stage 2, starting again..."); 
+                   
+               else if (user_input.equals("1")||user_input.equals("continue")){
+                  System.out.print("\nYou chose to move on to stage 3, here we go...");
+                  stageThreeAdd("fossil");
+               }   
+               else {
+                  System.out.print("\nReturning to main menu...");       
+                  CSCI1100_PROJECT.runMainMenu();
+               }                 
+            }  
+         }
+      }   
+                
+      else
+         CSCI1100_PROJECT.runMainMenu();
+   }//END stageTwoAdd()
+        
+   //QUESTION GENERATOR FOR STAGE TWO
+   public static int q2A(int score){
+      Scanner kb = new Scanner(System.in);
+      int n1,n2, userAns = 0, ans;
+      String selection = "", user_input = "";
+      boolean x = false;
+      Random r = new Random();
+      n1 = r.nextInt(15)+3;
+      n2 = r.nextInt(15)+5;
+      System.out.print("\nSolve the equation: " + n1 + " + " + n2 + " = ");
+      user_input = kb.nextLine();
+      while(x != true){
+         try {
+            userAns = Integer.parseInt(user_input);
+            x = true;
+         } catch (NumberFormatException e) {
+            System.out.print("\nWhat you entered was not a number, please try again: ");
+            user_input = kb.nextLine();
+            x = false;
+         }   
+      }         
+      ans = n1 + n2;
+      
+      if(ans == userAns){
+         System.out.println("\nCongratulations! You have solved the equation!");
+         score++;
+      }
+      else{
+         System.out.println("\nWhat you have entered is incorrect.");
+      }
+      return score;
+   }//END q2A     
+
+//
+//STAGE 3
+//
+  
+   public static void stageThreeAdd(String user_input){
+      Scanner kb = new Scanner(System.in);
+      
+      System.out.print("\nYou have entered Stage Three of Addition.");
+      
+      while (!user_input.equals("fossil")){
+         System.out.println("\nIn order to remain on this stage, please enter the correct password "
+                         +"\nor type quit to return to the Main Menu");
+         user_input = kb.nextLine();
+         user_input = user_input.toLowerCase();
+         
+         if (user_input.equals("fossil"))
+            System.out.print("\nThat password was correct!");   
+         else if (user_input.equals("quit")||user_input.equals("main menu"))
+            CSCI1100_PROJECT.runMainMenu(); 
+         else
+            System.out.print("\nSorry, what you entered was not the password...");
+      }      
+                 
+      System.out.println("\nYou must solve 5 equations correctly to complete this stage."
+                        +"\nWould you like to begin Stage Three?"
+                        +"\nYes (continue) - 1"
+                        +"\nNo (main menu) - 2");
+                        
+      String[] menu_options = {"yes","1","no","2"};
+      
+      user_input = CSCI1100_PROJECT.runInputLoop(menu_options);
+      
+      int score = 0;
+      
+      boolean x = false;
+      
+      if(user_input.equals("yes")||user_input.equals("1")){
+         while (x != true){
+            for (int i = 0 ; i < 5 ; i++){
+               score = q3A(score);
+            }
+            System.out.print("\nYour current score is: "+score);
+            if (score >= 3){
+               System.out.print("\nThe secret code to advance to Subtraction training Stage 1 is : carnivore");
+               
+               user_input = continueCheck3("\nWhat would you like to do?");
+               
+               if (user_input.equals("0")||user_input.equals("replay"))
+                  System.out.print("\nYou chose to keep playing stage 3, starting again..."); 
+                   
+               else if (user_input.equals("1")||user_input.equals("continue")){
+                  System.out.print("\nWe're moving on to Subtraction Training Stage 1, here we go...");
+                  System.out.print("\nplaceholder text for ... stageOneSub()");
+                  CSCI1100_PROJECT.runMainMenu();
+               }   
+               else {
+                  System.out.print("\nReturning to main menu...");       
+                  CSCI1100_PROJECT.runMainMenu();
+               }                 
+            }  
+         }
+      }   
+                
+      else
+         CSCI1100_PROJECT.runMainMenu();
+         
+   }//END stageThreeAdd()
+        
+
+   //QUESTION GENERATOR FOR STAGE THREE
+   public static int q3A(int score){
+      Scanner kb = new Scanner(System.in);
+      int n1,n2,n3, userAns = 0, ans;
+      String selection = "", user_input = "";
+      boolean x = false;
+      Random r = new Random();
+      n1 = r.nextInt(15)+1;
+      n2 = r.nextInt(15)+1;
+      n3 = r.nextInt(15)+1;
+      System.out.print("\nSolve the equation: " + n1 + " + " + n2 + " + " + n3 + " = ");
+      user_input = kb.nextLine();
+      while(x != true){
+         try {
+            userAns = Integer.parseInt(user_input);
+            x = true;
+         } catch (NumberFormatException e) {
+            System.out.print("\nWhat you entered was not a number, please try again: ");
+            user_input = kb.nextLine();
+            x = false;
+         }   
+      }         
+      ans = n1 + n2 + n3;
+      
+      if(ans == userAns){
+         System.out.println("\nCongratulations! You have solved the equation!");
+         score++;
+      }
+      else{
+         System.out.println("\nWhat you have entered is incorrect.");
+      }
+      return score;
+      
+   }//END q3A        
+      
+     
+   public static String continueCheck12(String message){
+      Scanner kb = new Scanner(System.in);
+      System.out.print(message);
+      System.out.println("\nReplay    - 0"
+                        +"\nContinue  - 1"
+                        +"\nMain Menu - 2"); 
+      String[] menu_options = {"replay","0","continue","1","main menu","2"};
+      String user_input = CSCI1100_PROJECT.runInputLoop(menu_options);
+      return user_input;
+   }//END continueCheck12  
+   
+   public static String continueCheck3(String message){
+   Scanner kb = new Scanner(System.in);
+   System.out.print(message);
+   System.out.println("\n0 - Replay Addition Stage 3"
+                     +"\n1 - Continue to Subtraction Stage 1"
+                     +"\n2 - Main Menu"); 
+   String[] menu_options = {"replay","0","continue","1","main menu","2"};
+   String user_input = CSCI1100_PROJECT.runInputLoop(menu_options);
+   return user_input;
+   }//END continueCheck3  
+                                
+      
+}//END CLASS
+                      
+                  
+                        
