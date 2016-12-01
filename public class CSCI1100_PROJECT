@@ -59,8 +59,10 @@ public class CSCI1100_PROJECT {
 				
 			case "quit" :
 				runQuit();
+				break;
 			case "4" :
 				runQuit();
+				break;
 		
 		}
 	}
@@ -100,34 +102,44 @@ public class CSCI1100_PROJECT {
 		user_input = runInputLoop(menu_options);
 		
 		switch (user_input){
-			
+		
 			case "addition" :
 				runAdditionMenu();
+				break;
 			case "1" :
 				runAdditionMenu();
+				break;
 				
 			case "subtraction" :
 				runSubtractionMenu();
+				break;
 			case "2" :
 				runSubtractionMenu();
+				break;
 
 			case "multiplication" :
 				runMultiplicationMenu();
+				break;
 			case "3" :
 				runMultiplicationMenu();
+				break;
 
 			case "division" :
 				runDivisionMenu();
+				break;
 
 			case "4" :
 				runDivisionMenu();
+				break;
 
 			case "main menu" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
+				break;
 			case "5" :
 				 System.out.println("Returning to main menu...");
 				 runMainMenu();
+				 break;
 		}
 	}
 	
@@ -155,38 +167,43 @@ public class CSCI1100_PROJECT {
 		
 		System.out.println("\nWelcome to the addition training menu. How would you like to proceed?"
 				           + "\n1 - Stage one"
-			              + "\n2 - Stage two"
+			               + "\n2 - Stage two"
 				           + "\n3 - Stage three"
-			              + "\n4 - Main menu");
+			               + "\n4 - Main menu");
 		user_input = runInputLoop(menu_options);
 		
 		switch (user_input) {
 		
 			case "stage one" :
 				Addition.stageOneAdd();
-			
-         case "1" :
-			   Addition.stageOneAdd();
+				break;
+			case "1" :
+				Addition.stageOneAdd();
+				break;
 				
 			case "stage two" :
-            Addition.stageTwoAdd("");
-            
+				Addition.stageTwoAdd("");
+				break;
 			case "2" :
 				Addition.stageTwoAdd("");
+				break;
 				
 			case "stage three" :
 				Addition.stageThreeAdd("");
-            
+				break;
 			case "3" :
 				Addition.stageThreeAdd("");
+				break;
 				
 			case "main menu" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
-            
+				break;
+    
 			case "4" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
+				break;
 		
 		}
 	}
@@ -225,35 +242,43 @@ public class CSCI1100_PROJECT {
 				//runSubtractionStageOne
 				System.out.println("Returning to main menu...(subtraction stage one)");
 				runMainMenu();
+				break;
 			case "1" :
 				//runSubtractionStageOne
 				System.out.println("Returning to main menu...(subtraction stage one)");
 				runMainMenu();
+				break;
 				
 			case "stage two" :
 				//runSubtractionStageTwo
 				System.out.println("Returning to main menu...(subtraction stage two)");
 				runMainMenu();
+				break;
 			case "2" :
 				//runSubtractionStageTwo
 				System.out.println("Returning to main menu...(subtraction stage two)");
 				runMainMenu();
+				break;
 				
 			case "stage three" :
 				//runSubtractionStageThree
 				System.out.println("Returning to main menu...(subtraction stage three)");
 				runMainMenu();
+				break;
 			case "3" :
 				//runSubtractionStageThree
 				System.out.println("Returning to main menu...(subtraction stage three)");
 				runMainMenu();
+				break;
 				
 			case "main menu" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
+				break;
 			case "4" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
+				break;
 		}
 		
 	}
@@ -292,35 +317,42 @@ public class CSCI1100_PROJECT {
 				//runMultiplicationStageOne
 				System.out.println("Returning to main menu...(multiplication stage one)");
 				runMainMenu();
+				break;
 			case "1" :
 				//runMultiplicationStageOne
 				System.out.println("Returning to main menu...(multiplication stage one)");
 				runMainMenu();
+				break;
 				
 			case "stage two" :
 				//runMultiplicationStageTwo
 				System.out.println("Returning to main menu...(multiplication stage two)");
 				runMainMenu();
+				break;
 			case "2" :
 				//runMultiplicationStageTwo
 				System.out.println("Returning to main menu...(multiplication stage two)");
 				runMainMenu();
+				break;
 				
 			case "stage three" :
 				//runMultiplicationStageThree
 				System.out.println("Returning to main menu...(multiplication stage three)");
 				runMainMenu();
+				break;
 			case "3" :
 				//runMultiplicationStageThree
 				System.out.println("Returning to main menu...(multiplication stage three)");
 				runMainMenu();
-				
+				break;
 			case "main menu" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
+				break;
 			case "4" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
+				break;
 		
 		}
 	}
@@ -359,40 +391,47 @@ public class CSCI1100_PROJECT {
 				//runDivisionStageOne
 				System.out.println("Returning to main menu...(division stage one)");
 				runMainMenu();
+				break;
 			case "1" :
 				//runDivisionStageOne
 				System.out.println("Returning to main menu...(division stage one)");
 				runMainMenu();
+				break;
 				
 			case "stage two" :
 				//runDivisionStageTwo
 				System.out.println("Returning to main menu...(division stage two)");
 				runMainMenu();
+				break;
 			case "2" :
 				//runDivisionStageTwo
 				System.out.println("Returning to main menu...(division stage two)");
 				runMainMenu();
+				break;
 				
 			case "stage three" :
 				//runDivisionStageThree
 				System.out.println("Returning to main menu...(division stage three)");
 				runMainMenu();
+				break;
 			case "3" :
 				//runDivisionStageThree
 				System.out.println("Returning to main menu...(division stage three)");
 				runMainMenu();
+				break;
 				
 			case "main menu" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
+				break;
 			case "4" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
+				break;
 		
 		}
 	}
 
-	
 	
 	public static void runSurvival() {
 		
