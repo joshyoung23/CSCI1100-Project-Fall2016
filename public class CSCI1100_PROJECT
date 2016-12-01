@@ -154,44 +154,36 @@ public class CSCI1100_PROJECT {
 
 		
 		System.out.println("\nWelcome to the addition training menu. How would you like to proceed?"
-				+ "\n1 - Stage one"
-				+ "\n2 - Stage two"
-				+ "\n3 - Stage three"
-				+ "\n4 - Main menu");
+				           + "\n1 - Stage one"
+			              + "\n2 - Stage two"
+				           + "\n3 - Stage three"
+			              + "\n4 - Main menu");
 		user_input = runInputLoop(menu_options);
 		
 		switch (user_input) {
 		
 			case "stage one" :
-				//runAdditionStageOne
-				System.out.println("Returning to main menu...(addition stage one)");
-				runMainMenu();
-			case "1" :
-				//runAdditionStageOne
-				System.out.println("Returning to main menu...(addition stage one)");
-				runMainMenu();
+				Addition.stageOneAdd();
+			
+         case "1" :
+			   Addition.stageOneAdd();
 				
 			case "stage two" :
-				//runAdditionStageTwo
-				System.out.println("Returning to main menu...(addition stage two)");
-				runMainMenu();
+            Addition.stageTwoAdd("");
+            
 			case "2" :
-				//runAdditionStageTwo
-				System.out.println("Returning to main menu...(addition stage two)");
-				runMainMenu();
+				Addition.stageTwoAdd("");
 				
 			case "stage three" :
-				//runAdditionStageThree
-				System.out.println("Returning to main menu...(addition stage three)");
-				runMainMenu();
+				Addition.stageThreeAdd("");
+            
 			case "3" :
-				//runAdditionStageThree
-				System.out.println("Returning to main menu...(addition stage three)");
-				runMainMenu();
+				Addition.stageThreeAdd("");
 				
 			case "main menu" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
+            
 			case "4" :
 				System.out.println("Returning to main menu...");
 				runMainMenu();
