@@ -28,7 +28,7 @@ public class Addition{
             }
             System.out.print("\nYour current score is: "+score);
             if (score >= 3){
-               System.out.print("\nThe secret code to advance to stage 2 is : rex");
+               System.out.print("\nThe secret code to access Addition - Stage 2 from the main menu is : rex");
                
                user_input = continueCheck12("\nWhat would you like to do?");
                
@@ -43,7 +43,16 @@ public class Addition{
                   System.out.print("\nReturning to main menu...");       
                   CSCI1100_PROJECT.runMainMenu();
                }                 
-            }  
+            }
+            else{
+               user_input = continueCheckFail();
+               if (user_input.equals("0")||user_input.equals("retry"))
+                  System.out.print("\nYou chose to retry this stage, starting again...");   
+               else {
+                  System.out.print("\nReturning to main menu...");       
+                  CSCI1100_PROJECT.runMainMenu();
+               }                 
+            }                 
          }
       }   
                 
@@ -128,7 +137,7 @@ public class Addition{
             }
             System.out.print("\nYour current score is: "+score);
             if (score >= 3){
-               System.out.print("\nThe secret code to advance to stage 3 is : fossil");
+               System.out.print("\nThe secret code to access Addition - Stage 3 from the main menu is : fossil");
                
                user_input = continueCheck12("\nWhat would you like to do?");
                
@@ -142,8 +151,17 @@ public class Addition{
                else {
                   System.out.print("\nReturning to main menu...");       
                   CSCI1100_PROJECT.runMainMenu();
+               }                                               
+            } 
+            else{
+               user_input = continueCheckFail();
+               if (user_input.equals("0")||user_input.equals("retry"))
+                  System.out.print("\nYou chose to retry this stage, starting again...");   
+               else {
+                  System.out.print("\nReturning to main menu...");       
+                  CSCI1100_PROJECT.runMainMenu();
                }                 
-            }  
+            }                  
          }
       }   
                 
@@ -227,7 +245,7 @@ public class Addition{
             }
             System.out.print("\nYour current score is: "+score);
             if (score >= 3){
-               System.out.print("\nThe secret code to advance to Subtraction training Stage 1 is : carnivore");
+               System.out.print("\nYou've finished Addition training, congratulations!");
                
                user_input = continueCheck3("\nWhat would you like to do?");
                
@@ -236,14 +254,22 @@ public class Addition{
                    
                else if (user_input.equals("1")||user_input.equals("continue")){
                   System.out.print("\nWe're moving on to Subtraction Training Stage 1, here we go...");
-                  System.out.print("\nplaceholder text for ... stageOneSub()");
-                  CSCI1100_PROJECT.runMainMenu();
+                  Subtraction.stageOneSub();
                }   
                else {
                   System.out.print("\nReturning to main menu...");       
                   CSCI1100_PROJECT.runMainMenu();
                }                 
-            }  
+            } 
+            else{
+               user_input = continueCheckFail();
+               if (user_input.equals("0")||user_input.equals("retry"))
+                  System.out.print("\nYou chose to retry this stage, starting again...");   
+               else {
+                  System.out.print("\nReturning to main menu...");       
+                  CSCI1100_PROJECT.runMainMenu();
+               }                 
+            }                  
          }
       }   
                 
@@ -309,7 +335,18 @@ public class Addition{
    String[] menu_options = {"replay","0","continue","1","main menu","2"};
    String user_input = CSCI1100_PROJECT.runInputLoop(menu_options);
    return user_input;
-   }//END continueCheck3  
+   }//END continueCheck3
+   
+   public static String continueCheckFail(){
+      Scanner kb = new Scanner(System.in);
+      System.out.print("\nSorry, you have not scored high enough to complete this stage."
+                                 +"\nWhat would you like to do?");
+      System.out.println("\n0 - Retry"
+                        +"\n1 - Main Menu");
+      String[] menu_options = {"retry", "0", "main menu", "2"};
+      String user_input = CSCI1100_PROJECT.runInputLoop(menu_options);
+      return user_input;
+   }//END continueCheckFail   
                                 
       
 }//END CLASS
