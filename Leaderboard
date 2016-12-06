@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
-
+import java.util.Arrays;
 
 public class Leaderboard {
 	
@@ -28,25 +28,53 @@ public class Leaderboard {
 		
 	}
 	
-	
-	public static void updateLeaderboard(int score) throws IOException {
+	public static void updateLeaderboard (int score) throws IOException {
 		
-		Scanner input = new Scanner(System.in); //Scanner isn't needed once we actually have values to input. For test purposes only!
 		String path = "C:\\Users\\Josh\\Desktop\\leaderboard\\leaderboard.txt";
+		BufferedReader br = null;
 		boolean append_to_file = false;
+		String line;
+		int [] scores = new int [10];
+		String array_to_string;
 		
-		int [] scores = new int [10]; //Stores the score values, but it needs to be properly congifured with a score from the program
 		
+		//This entire block will read the text file, and import it into an array of integers called scores[]
+		try { 
+			br = new BufferedReader(new FileReader(path));
+		} catch (FileNotFoundException fnfex){
+			System.out.println("The file could not be found.");
+			System.exit(0);
+		}
+		try { 
+			int i = 0;
+			while ((line = br.readLine()) != null) {
+				array_to_string = line;
+				scores[i] = Integer.parseInt(array_to_string);
+				i++;
+			}
+		} catch (IOException ioex) {
+			System.out.println("Error reading file");
+			System.exit(0);
+		}
+		
+		
+		//This will try to add the new score to the list, then add the new score.
+		Arrays.sort(scores);
+		if (score > scores[0]){
+			scores[0] = score;
+		}
+		Arrays.sort(scores);
+		
+		//This block will write to the text file.
 		FileWriter write = new FileWriter(path, append_to_file);
 		PrintWriter print_line = new PrintWriter(write);
 		
 		//This loop will print the array to the text file, with a new line for each value.
 		for (int i = 0; i < 10; i++){
-			System.out.print("Please input the next value.\t");
-			scores[i] = input.nextInt();
+			System.out.println(scores[i]);
 			print_line.printf("%s" + "%n",scores[i]);
 		}
-		print_line.close();
-		
+		print_line.close();	
 	}
+							
 }
