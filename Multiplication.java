@@ -1,9 +1,10 @@
 import java.util.Random;//import random class
 import java.util.Scanner;//import scanner
 import java.lang.NumberFormatException;//import number format exception
+import java.io.*;
 
 public class Multiplication{                 
-   public static void stageOneMulti(){
+   public static void stageOneMulti() throws IOException{
       Scanner kb = new Scanner(System.in);
       
       System.out.print("\nYou have entered Stage One of Multiplication."
@@ -108,7 +109,7 @@ public class Multiplication{
 //STAGE TWO
 //   
 
-   public static void stageTwoMulti(String user_input){
+   public static void stageTwoMulti(String user_input) throws IOException{
       Scanner kb = new Scanner(System.in);
       
       System.out.print("\nYou have entered Stage Two of Multiplication.");
@@ -224,7 +225,7 @@ public class Multiplication{
 //STAGE 3
 //
   
-   public static void stageThreeMulti(String user_input){
+   public static void stageThreeMulti(String user_input)throws IOException{
       Scanner kb = new Scanner(System.in);
       
       System.out.print("\nYou have entered Stage Three of Multiplication.");

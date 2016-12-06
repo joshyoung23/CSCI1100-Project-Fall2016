@@ -1,9 +1,10 @@
 import java.util.Random;//import random class
 import java.util.Scanner;//import scanner
 import java.lang.NumberFormatException;
+import java.io.*;
 
 public class Addition{                 
-   public static void stageOneAdd(){
+   public static void stageOneAdd() throws IOException {
       Scanner kb = new Scanner(System.in);
       
       System.out.print("\nYou have entered Stage One of Addition."
@@ -113,7 +114,7 @@ public class Addition{
 //STAGE TWO
 //   
 
-   public static void stageTwoAdd(String user_input){
+   public static void stageTwoAdd(String user_input) throws IOException {
       Scanner kb = new Scanner(System.in);
       
       System.out.print("\nYou have entered Stage Two of Addition.");
@@ -230,7 +231,7 @@ public class Addition{
 //STAGE 3
 //
   
-   public static void stageThreeAdd(String user_input){
+   public static void stageThreeAdd(String user_input) throws IOException {
       Scanner kb = new Scanner(System.in);
       
       System.out.print("\nYou have entered Stage Three of Addition.");
@@ -385,5 +386,4 @@ public class Addition{
       
 }//END CLASS
                       
-                  
-                        
+ 

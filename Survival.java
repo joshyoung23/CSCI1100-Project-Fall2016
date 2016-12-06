@@ -2,11 +2,12 @@ import java.util.Random;//import random class
 import java.util.Scanner;//import scanner
 import java.lang.NumberFormatException;//import number format exception
 import java.util.Timer;
+import java.io.*;
 
 public class Survival {
       
    //The main class for survival mode, runs the intro and the loop to call question methods      
-   public static int survival(){
+   public static int survival() throws IOException {
       Scanner kb = new Scanner(System.in);
       Random r = new Random();
       int score = 0;
@@ -48,6 +49,7 @@ public class Survival {
                   System.out.print("\nYou have chosen to quit Survival Mode."
                                   +"\nYour final score was: "+score
                                   +"\nReturning to the main menu...");
+                  Leaderboard.updateLeaderboard(score);
                   return score;                
                }                  
                //if their answer is wrong it'll increment the "wrong" counter 
@@ -55,9 +57,9 @@ public class Survival {
                   wrong++;
                //this checks the time, they are allowed only 15 seconds to answer   
                else if ((startTime + limit) < System.currentTimeMillis()) {
-                  System.out.print("\nYour answer was too slow ("+((System.currentTimeMillis()-startTime)/1000)
-                                  +" seconds) and it was counted as a mistake!");
-                  wrong++;
+            	   System.out.print("\nYour answer was too slow ("+((System.currentTimeMillis()-startTime)/1000)
+                           +" seconds) and it was counted as a mistake!");
+            	   wrong++;
                }
                //if their answer is correct it will augment the score by 'check' which will be 1
                else
@@ -69,6 +71,7 @@ public class Survival {
                   System.out.print("\nThat was your third incorrect answer!"
                                   +"\nYour final score was: "+score
                                   +"\nReturning to the main menu...");
+                  Leaderboard.updateLeaderboard(score);
                   return score;
                }
                //augment the counter after every iteration of the for loop so that it can be passed into the 
@@ -87,7 +90,9 @@ public class Survival {
             if (user_input.equals("no") || user_input.equals("2")){
                System.out.print("\nYour final score was: "+score
                                +"\nReturning to the main menu...");
-               return score;                
+               Leaderboard.updateLeaderboard(score);
+               return score; 
+               
             }                   
          }//end while
       }//end if 
@@ -95,7 +100,9 @@ public class Survival {
       //if they never said "yes" to starting survival mode, it'll send them back to the main menu
       else
          System.out.print("\nReturning to the main menu..."); 
-      return score;           
+      Leaderboard.updateLeaderboard(score);
+      return score;   
+     
    } //END MAIN METHOD
 
 
@@ -354,5 +361,4 @@ public class Survival {
          return qGen3();      
    }                                                       
       
-}        
-            
+}   
