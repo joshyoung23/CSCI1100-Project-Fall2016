@@ -30,8 +30,9 @@ public class Leaderboard {
 					System.out.println("Error reading file");
 					System.exit(0);
 				}
+		System.out.print("\n The top ten scores of all time are...");
 		int j = 1;
-		for (int i = 9; i > 0; i--){
+		for (int i = 9; i >= 0; i--){
 			System.out.print("\n" + j + ". " + scores[i]);
 			j++;
 		}
