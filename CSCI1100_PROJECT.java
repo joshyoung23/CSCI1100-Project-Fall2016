@@ -1,15 +1,15 @@
 import java.util.Scanner;
+import java.io.*;
 
 public class CSCI1100_PROJECT {
-   int[] leader = new int[10];
    
-	public static void main (String [] args) {
-		System.out.print("CSCI1100_PROJECT successfully booted... ");
+	public static void main (String [] args) throws IOException {
+		System.out.print("Jurmathic Park successfully booted... Welcome to the jungle. ");
 		int score = runMainMenu();
 
 	}
 	
-	public static int runMainMenu(){
+	public static int runMainMenu () throws IOException {
       int score = 0;
 		
 		String [] menu_options = new String[8]; 
@@ -74,7 +74,7 @@ public class CSCI1100_PROJECT {
 	}
 	
 	
-	public static void runTrainingMenu() {
+	public static void runTrainingMenu() throws IOException {
 		
 		String [] menu_options = new String[10]; 
 		String user_input;
@@ -149,7 +149,7 @@ public class CSCI1100_PROJECT {
 		}
 	}
 	
-	public static void runAdditionMenu() {
+	public static void runAdditionMenu() throws IOException {
 		
 		String [] menu_options = new String[8];
 		String user_input = "";
@@ -214,7 +214,7 @@ public class CSCI1100_PROJECT {
 		}
 	}
 	
-	public static void runSubtractionMenu() {
+	public static void runSubtractionMenu() throws IOException {
 		
 		String [] menu_options = new String[8];
 		String user_input = "";
@@ -274,7 +274,7 @@ public class CSCI1100_PROJECT {
 		
 	}
 	
-	public static void runMultiplicationMenu() {
+	public static void runMultiplicationMenu() throws IOException{
 		
 		String [] menu_options = new String[8];
 		String user_input = "";
@@ -334,7 +334,7 @@ public class CSCI1100_PROJECT {
 		}
 	}
 	
-	public static void runDivisionMenu() {
+	public static void runDivisionMenu() throws IOException {
 		
 		String [] menu_options = new String[8];
 		String user_input = "";
@@ -395,7 +395,7 @@ public class CSCI1100_PROJECT {
 	}
 
 	
-	public static int runSurvival() {
+	public static int runSurvival() throws IOException {
 		int score = 0;
       
 		String [] menu_options = new String[4];
@@ -431,12 +431,9 @@ public class CSCI1100_PROJECT {
 	   
    }
 	
-	public static void runLeaderboard() {
-         
-		System.out.print("\nLeaderboard successfully opened."
-                      +"\nCurrent leaders are ...not available... ");      
-
-		System.out.println("\nReturning to main menu...");
+	public static void runLeaderboard() throws IOException {
+		Leaderboard.outputLeaderboard();     
+		System.out.println("\n\nReturning to main menu...");
 		runMainMenu();
 	}
 	
@@ -447,17 +444,14 @@ public class CSCI1100_PROJECT {
 
 	//This method is to be used for every MENU input. It will check to ensure that user_input is a valid input. 
 	public static String runInputLoop(String [] menu_options) {
-		
-      Scanner input = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 		String user_input = "";
 		boolean match_found = false;
 		while (match_found != true){
-			
-         //Prompts the user to input a command, and converts it to lower case.
+			//Prompts the user to input a command, and converts it to lower case.
 			user_input = input.nextLine();
 			user_input = user_input.toLowerCase();
-			
-         //This for loop compares the user_input to every value in the menu_options array provided.
+			//This for loop compares the user_input to every value in the menu_options array provided.
 			//If a match is found, user_input is cleared to be returned to the menu method that called it. 
 			for (int i = 0; i < menu_options.length; i++){
 				if (user_input.equals(menu_options[i])){
