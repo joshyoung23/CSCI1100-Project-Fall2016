@@ -82,6 +82,7 @@ public class Survival {
             //after every 10 rounds it'll ask the user if they want to continue playing
             //if they say no it'll tell them their score and return them to the main menu
             System.out.println("\nYou've been playing for "+counter+" rounds,"
+                            + facts.randomFacts()
                             +"\ndo you want to keep playing?"
                             +"\n1 - Yes (continue)"
                             +"\n2 - No (main menu)");           
