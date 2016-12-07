@@ -95,10 +95,12 @@ public class Subtraction{
       
       if(ans == userAns){
          System.out.println("\nThat was the correct answer!");
+         correct.randomSayingCorrect();
          score++;
       }
       else{
          System.out.println("\nWhat you have entered is incorrect.");
+         wrong.randomSayingWrong();
       }
       return score;
       
@@ -212,10 +214,12 @@ public class Subtraction{
       
       if(ans == userAns){
          System.out.println("\nThat was the correct answer!");
+         correct.randomSayingCorrect();
          score++;
       }
       else{
          System.out.println("\nWhat you have entered is incorrect.");
+         wrong.randomSayingWrong();
       }
       return score;
    }//END q2S     
@@ -331,10 +335,12 @@ public class Subtraction{
       
       if(ans == userAns){
          System.out.println("\nThat was the correct answer!");
+         correct.randomSayingCorrect();
          score++;
       }
       else{
          System.out.println("\nWhat you have entered is incorrect.");
+         wrong.randomSayingWrong();
       }
       return score;
       
